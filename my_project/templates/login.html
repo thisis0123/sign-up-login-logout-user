@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+
+    <!-- we used signup.css because it has the same design we want for our login-->
+
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+</head>
+<body>
+    <main>
+
+        <h2>Please, log into your account</h2>
+        <hr>
+
+        {% for message in messages %}
+        <h3 style="color: red;">{{message}}</h3>
+        {% endfor %}
+
+        
+        <form method="post" action="login">
+            {% csrf_token %}
+
+
+            <div>Username: </div>
+            <input type="text" name="username" required>
+            
+
+            <div>Password: </div>
+            <input type="password" name="password" required>
+            <br>
+            
+            <input type="submit" class="button">
+
+        </form>
+
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <h1>you are {{user.username}}</h1>
+    <a href="logout">        
+        <button>Logout</button>
+    </a>
+    {% else %}
+    <h1>you are not logged in</h1>
+    <a href="login">
+        <button>Login</button>
+    </a>
+    {% endif %}
+
+    <a href="signup">
+        <button>
+            Sing up
+        </button>
+    </a>
+    
+</body>
+</html>
